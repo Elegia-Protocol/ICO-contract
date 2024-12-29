@@ -1,11 +1,11 @@
-import { toNano } from '@ton/core';
+import { Address, Cell, toNano } from '@ton/core';
 import { ICO } from '../wrappers/ICO';
 import { NetworkProvider } from '@ton/blueprint';
 
 export async function run(provider: NetworkProvider) {
-    const iCO = provider.open(await ICO.fromInit());
+    const ico = provider.open(await ICO.fromInit(Cell.fromBase64(`Wallet code`), Address.parse("Jetton master address"), toNano("cost in TON per 1 token")));
 
-    await iCO.send(
+    await ico.send(
         provider.sender(),
         {
             value: toNano('0.05'),
@@ -16,7 +16,6 @@ export async function run(provider: NetworkProvider) {
         }
     );
 
-    await provider.waitForDeploy(iCO.address);
+    await provider.waitForDeploy(ico.address);
 
-    // run methods on `iCO`
 }
