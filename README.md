@@ -1,6 +1,7 @@
 # Elegia ICO contract
 # Be careful! The contract is in alpha version, vulnerabilities are possible. 
-To configure the contract and then deploy it, edit the scripts/deployIco.ts file
+To configure the contract and then deploy it, edit the scripts/deployIco.ts file\
+[Example](https://testnet.tonviewer.com/kQANyRL6_O-0E3mP1Gqrc5VjNi6imNQX25mhArHIsVCbLmBW "Tonviewer")
 
 ## Project structure
 
